@@ -8,6 +8,7 @@ export class GifsService {
 
   private apiKey: string = 'pPedexad1iKYVADugAqoVLMCeVT1br0z';
   private _searchHistory: string[] = [];
+  private limit: number = 20;
 
   public results: any[] = [];
 
@@ -32,7 +33,7 @@ export class GifsService {
       }
     }
 
-    this.http.get(`https://api.giphy.com/v1/gifs/search?api_key=${this.apiKey}&q=${query}`).subscribe( (result: any) => {
+    this.http.get(`https://api.giphy.com/v1/gifs/search?api_key=${this.apiKey}&q=${query}&limit=${this.limit}`).subscribe( (result: any) => {
         this.results = result.data;
     });
   }
