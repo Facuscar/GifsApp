@@ -14,7 +14,7 @@ export class SearchComponent {
 
   }
 
-  buscar(): void {
+  search(): void {
     const value = this.searchTxt.nativeElement.value
     this.gifsService.searchGifs( value );
     this.searchTxt.nativeElement.value = '' ; 
